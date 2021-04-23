@@ -1,0 +1,13 @@
+digraph DFA {
+	graph [rankdir=LR]
+	0 [shape=circle]
+	1 [shape=circle]
+	0 -> 1 [label=a]
+	0 [shape=circle]
+	2 [shape=doublecircle]
+	0 -> 2 [label=b]
+	1 -> 1 [label=a]
+	1 -> 2 [label=b]
+	"" [shape=none]
+	"" -> 0 [label=start]
+}

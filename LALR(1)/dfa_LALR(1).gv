@@ -1,0 +1,64 @@
+digraph "dfa_LALR(1)" {
+	graph [rankdir=LR]
+	s0 [label="s0
+S0 → . S ,$
+S → . L = S ,$
+S → . R ,$
+L → . a L R ,=
+L → . b ,=
+R → . a ,$"]
+	s2 [label="s2
+S → L . = S ,$"]
+	s0 -> s2 [label=L]
+	s5 [label="s5
+L → b . ,=/a"]
+	s0 -> s5 [label=b]
+	s4 [label="s4
+L → a . L R ,=
+L → . a L R ,a
+L → . b ,a
+R → a . ,$"]
+	s0 -> s4 [label=a]
+	s1 [label="s1
+S0 → S . ,$"]
+	s0 -> s1 [label=S]
+	s3 [label="s3
+S → R . ,$"]
+	s0 -> s3 [label=R]
+	s6 [label="s6
+S → L = . S ,$
+S → . L = S ,$
+S → . R ,$
+L → . a L R ,=
+L → . b ,=
+R → . a ,$"]
+	s2 -> s6 [label="="]
+	s4 -> s5 [label=b]
+	s8 [label="s8
+L → a . L R ,a
+L → . a L R ,a
+L → . b ,a"]
+	s4 -> s8 [label=a]
+	s7 [label="s7
+L → a L . R ,=/a
+R → . a ,=/a"]
+	s4 -> s7 [label=L]
+	s9 [label="s9
+S → L = S . ,$"]
+	s6 -> s9 [label=S]
+	s6 -> s2 [label=L]
+	s6 -> s5 [label=b]
+	s6 -> s3 [label=R]
+	s6 -> s4 [label=a]
+	s8 -> s5 [label=b]
+	s8 -> s8 [label=a]
+	s8 -> s7 [label=L]
+	s11 [label="s11
+R → a . ,=/a"]
+	s7 -> s11 [label=a]
+	s10 [label="s10
+L → a L R . ,=/a"]
+	s7 -> s10 [label=R]
+	"" [shape=none]
+	"" -> s0 [label=start]
+}

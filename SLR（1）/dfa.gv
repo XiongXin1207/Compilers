@@ -1,0 +1,52 @@
+digraph dfa {
+	graph [rankdir=LR]
+	s0 [label="s0
+S0 → . S
+S → . A
+A → . A b
+A → . b B a"]
+	s1 [label="s1
+S0 → S ."]
+	s0 -> s1 [label=S]
+	s2 [label="s2
+S → A .
+A → A . b"]
+	s0 -> s2 [label=A]
+	s3 [label="s3
+A → b . B a
+B → . a A c
+B → . a
+B → . a A b"]
+	s0 -> s3 [label=b]
+	s4 [label="s4
+A → A b ."]
+	s2 -> s4 [label=b]
+	s5 [label="s5
+A → b B . a"]
+	s3 -> s5 [label=B]
+	s6 [label="s6
+B → a . A c
+A → . A b
+A → . b B a
+B → a .
+B → a . A b"]
+	s3 -> s6 [label=a]
+	s7 [label="s7
+A → b B a ."]
+	s5 -> s7 [label=a]
+	s8 [label="s8
+B → a A . c
+A → A . b
+B → a A . b"]
+	s6 -> s8 [label=A]
+	s6 -> s3 [label=b]
+	s9 [label="s9
+B → a A c ."]
+	s8 -> s9 [label=c]
+	s10 [label="s10
+A → A b .
+B → a A b ."]
+	s8 -> s10 [label=b]
+	"" [shape=none]
+	"" -> s0 [label=start]
+}

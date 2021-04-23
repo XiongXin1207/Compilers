@@ -1,0 +1,38 @@
+digraph "dfa_LR(0)" {
+	graph [rankdir=LR]
+	s0 [label="s0
+S0 → . S
+S → . D b B
+D → . d
+D → . "]
+	s1 [label="s1
+S0 → S ."]
+	s0 -> s1 [label=S]
+	s2 [label="s2
+S → D . b B"]
+	s0 -> s2 [label=D]
+	s3 [label="s3
+D → d ."]
+	s0 -> s3 [label=d]
+	s4 [label="s4
+S → D b . B
+B → . a
+B → . B b a
+B → . "]
+	s2 -> s4 [label=b]
+	s5 [label="s5
+S → D b B .
+B → B . b a"]
+	s4 -> s5 [label=B]
+	s6 [label="s6
+B → a ."]
+	s4 -> s6 [label=a]
+	s7 [label="s7
+B → B b . a"]
+	s5 -> s7 [label=b]
+	s8 [label="s8
+B → B b a ."]
+	s7 -> s8 [label=a]
+	"" [shape=none]
+	"" -> s0 [label=start]
+}

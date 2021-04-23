@@ -1,0 +1,9 @@
+digraph miniDFA {
+	graph [rankdir=LR]
+	0 [shape=circle]
+	0 -> 0 [label=a]
+	1 [shape=doublecircle]
+	0 -> 1 [label=b]
+	"" [shape=none]
+	"" -> 0 [label=start]
+}
